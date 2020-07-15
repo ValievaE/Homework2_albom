@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
         Button buttonBack = findViewById(R.id.buttonBack);
         Button buttonForward = findViewById(R.id.buttonForward);
         final TextView textView = findViewById(R.id.textrandom);
-        
+        int value = 1 + (int) (Math.random() * 100);
+        textView.setText("http://myfile.org/" + value);
+
         buttonForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int value = 1 + (int) (Math.random() * 100);
-                textView.setText("http://myfile.org/" + value);
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
             }
